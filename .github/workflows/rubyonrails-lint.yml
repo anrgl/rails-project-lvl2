@@ -23,7 +23,7 @@ jobs:
           bundler-cache: true
       - name: Run linters
         run: |
-          bin/rubocop --parallel
+          bundle exec rubocop
       - name: Run test
         run: |
           bin/rails test
