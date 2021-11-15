@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   resources :posts do
-    resources :post_comments, path: :comments
+    resources :post_comments
   end
 end

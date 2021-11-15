@@ -2,3 +2,10 @@ h1 = @post.title
 small = @post.creator.email
 p = @post.body
 hr
+= simple_form_for [@post, @post.comments.build] do |f|
+    = f.input :content, as: :text
+    = f.submit
+hr
+div
+  - @post.comments.each do |comment|
+    p = comment.content
