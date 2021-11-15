@@ -1,7 +1,8 @@
 h1 Posts
 - @posts.each do |post|
   div
-    h4 =post.title
+    h4
+      = link_to(post.title, post_path(post))
     small =post.creator.email
     p =post.body
   hr

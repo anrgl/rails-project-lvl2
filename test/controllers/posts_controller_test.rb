@@ -31,4 +31,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'h4', 'Test title'
   end
+
+  test 'opens post show page' do
+    get post_path(posts(:one))
+
+    assert_response :success
+    assert_select 'h1', 'First posts title'
+  end
 end
