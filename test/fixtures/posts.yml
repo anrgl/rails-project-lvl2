@@ -1,12 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: First posts title
   body: MyText
   category: one
   creator: one
 
 two:
+  id: 2
   title: MyString
   body: MyText
   category: two
