@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'ancestry', '~> 4.1'
 gem 'devise'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 5.0'
@@ -32,7 +33,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'brakeman'
+  gem 'brakeman', require: false
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
