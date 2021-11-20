@@ -4,12 +4,12 @@ one:
   id: 1
   title: First posts title
   body: MyText
-  category: one
+  post_category: one
   creator: one
 
 two:
   id: 2
   title: MyString
   body: MyText
-  category: two
+  post_category: two
   creator: two

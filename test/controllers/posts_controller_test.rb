@@ -7,7 +7,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     get root_path
 
     assert_response :success
-    assert_select 'h1', 'Posts'
+    assert_select 'h1', 'Blog posts'
   end
 
   test 'opens post new page' do
@@ -24,7 +24,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'creates a new post' do
     sign_in users(:one)
-    post posts_path, params: { post: { title: 'Test title', body: 'Test body', category_id: post_categories(:one).id } }
+    post posts_path, params: { post: { title: 'Test title', body: 'Test body', post_category_id: post_categories(:one).id } }
 
     assert_response :redirect
     follow_redirect!

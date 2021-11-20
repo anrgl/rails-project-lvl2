@@ -12,7 +12,7 @@
         = f.label :body, class: "form-label"
         = f.input_field :body, class: "form-control"
       .mb-3
-        = f.label :category, class: "form-label"
-        = f.association :category, label: false, input_html: { class: "form-select" }
+        = f.label :post_category, class: "form-label"
+        = f.association :post_category, label: false, input_html: { class: "form-select" }
       .mb-3
         = f.submit "Save", class: "btn btn-primary"
