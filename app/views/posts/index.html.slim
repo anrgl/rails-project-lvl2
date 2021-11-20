@@ -1,8 +1,17 @@
-h1 Posts
-- @posts.each do |post|
-  div
-    h4
-      = link_to(post.title, post_path(post))
-    small =post.creator.email
-    p =post.body
-  hr
+.row
+  .col
+    h1 Blog posts
+    - @posts.each do |post|
+      div
+        h4
+          = link_to(post.title, post_path(post))
+        small
+          = post.creator.email
+        p
+          = post.body
+        - if user_signed_in? && !current_user.liked_posts.include?(post)
+          = link_to('Like', post_post_likes_path(post.id), method: :post)
+        small
+          ' Likes:
+          = post.users_liked.count
+      hr

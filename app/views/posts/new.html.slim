@@ -1,6 +1,18 @@
-h1 Create new post
-= simple_form_for @post do |f|
-  = f.input :title
-  = f.input :body
-  = f.association :category
-  = f.submit
+.row
+  .col
+    h1 Create new post
+    = simple_form_for @post do |f|
+      - @post.errors.full_messages.each do |message|
+        .mb-3
+          = message
+      .mb-3
+        = f.label :title, class: "form-label"
+        = f.input_field :title, class: "form-control"
+      .mb-3
+        = f.label :body, class: "form-label"
+        = f.input_field :body, class: "form-control"
+      .mb-3
+        = f.label :category, class: "form-label"
+        = f.association :category, label: false, input_html: { class: "form-select" }
+      .mb-3
+        = f.submit "Save", class: "btn btn-primary"

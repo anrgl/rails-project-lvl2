@@ -1,11 +1,20 @@
-h1 = @post.title
-small = @post.creator.email
-p = @post.body
-hr
-= simple_form_for [@post, @post.comments.build] do |f|
-    = f.input :content, as: :text
-    = f.submit
-hr
-div
-  - @post.comments.each do |comment|
-    p = comment.content
+.row
+  .col
+    h1
+      = @post.title
+    small
+      = @post.creator.email
+    p
+      = @post.body
+    hr
+    = simple_form_for [@post, @post.comments.build] do |f|
+      .mb-3
+        = f.label :content, class: "form-label"
+        = f.input_field :content, as: :text, class: "form-control"
+      .mb-3
+        = f.submit "Save", class: "btn btn-primary"
+    hr
+    div
+      - @post.comments.each do |comment|
+        p
+          = comment.content

@@ -10,11 +10,29 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .container
-      - if user_signed_in?
-        = link_to 'Sign out', destroy_user_session_path, method: :delete
-      - else
-        = link_to 'Sign up', new_user_registration_path
-        = link_to 'Sign in', new_user_session_path
-      p.notice= notice
-      p.alert= alert
+      .row
+        .col
+          nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
+            .container-fluid
+              = link_to "Blog", root_path, class: "navbar-brand"
+              #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav
+                  - if user_signed_in?
+                    li.nav-item
+                      = link_to "Create new post", new_post_path, class: "nav-link active"
+                    li.nav-item
+                      = link_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-link active"
+                  - else
+                    li.nav-item
+                      = link_to 'Sign up', new_user_registration_path, class: "nav-link active"
+                    li.nav-item
+                      = link_to 'Sign in', new_user_session_path, class: "nav-link active"
+      .row
+        .col
+          - if flash[:alert]
+            .mb-3.alert.alert-danger
+              = alert
+          - if flash[:notice]
+            .mb-3.alert.alert-info
+              = notice
       = yield
