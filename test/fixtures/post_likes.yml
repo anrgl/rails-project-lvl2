@@ -3,6 +3,7 @@
 one:
   likes_count: 1
   post: one
+  user: one
 
 two:
   likes_count: 1

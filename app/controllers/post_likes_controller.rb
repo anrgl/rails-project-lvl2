@@ -10,7 +10,11 @@ class PostLikesController < ApplicationController
     redirect_to root_path
   end
 
-  def destroy; end
+  def destroy
+    @like = PostLike.find(params[:id])
+    @like.destroy
+    redirect_to root_path
+  end
 
   private
 
