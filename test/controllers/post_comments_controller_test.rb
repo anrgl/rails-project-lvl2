@@ -9,7 +9,7 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'create comment' do
-    post post_post_comments_path(posts(:one).id), params: { post_comment: { content: 'Test comment' } }
+    post post_comments_path(posts(:one).id), params: { post_comment: { content: 'Test comment' } }
 
     assert_response :redirect
     follow_redirect!

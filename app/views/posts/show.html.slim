@@ -7,7 +7,7 @@
     p
       = @post.body
     hr
-    = simple_form_for [@post, @post.comments.build] do |f|
+    = simple_form_for [@post, @post.comments.build], url: post_comments_path(@post) do |f|
       .mb-3
         = f.label :content, class: "form-label"
         = f.input_field :content, as: :text, class: "form-control"
