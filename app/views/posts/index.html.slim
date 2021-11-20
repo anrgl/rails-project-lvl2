@@ -10,7 +10,7 @@
         p
           = post.body
         - if user_signed_in? && !current_user.liked_posts.include?(post)
-          = link_to('Like', post_post_likes_path(post.id), method: :post)
+          = link_to('Like', post_likes_path(post.id), method: :post)
         small
           ' Likes:
           = post.users_liked.count
