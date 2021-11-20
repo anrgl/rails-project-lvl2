@@ -3,6 +3,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '3.0.1'
+
 gem 'ancestry', '~> 4.1'
 gem 'devise'
 gem 'jbuilder', '~> 2.7'
