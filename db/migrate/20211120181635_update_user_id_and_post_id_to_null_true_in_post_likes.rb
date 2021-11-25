@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateUserIdAndPostIdToNullTrueInPostLikes < ActiveRecord::Migration[6.1]
   def change
     change_column :post_likes, :user_id, :int, null: true

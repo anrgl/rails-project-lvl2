@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
@@ -24,7 +26,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'creates a new post' do
     sign_in users(:one)
-    post posts_path, params: { post: { title: 'Test title', body: 'Test body', post_category_id: post_categories(:one).id } }
+    post posts_path,
+         params: { post: { title: 'Test title', body: 'Test body', post_category_id: post_categories(:one).id } }
 
     assert_response :redirect
     follow_redirect!

@@ -14,7 +14,7 @@ gem 'rubocop', '~> 1.22', require: false
 gem 'rubocop-rails', require: false
 gem 'sass-rails', '>= 6'
 gem 'simple_form'
-gem "slim-rails"
+gem 'slim-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 # gem 'redis', '~> 4.0'

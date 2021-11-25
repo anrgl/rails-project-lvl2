@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class PostLikesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
@@ -17,6 +19,6 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
     like = post_likes(:one)
     delete post_like_path(p, like)
     assert_response :redirect
-    assert p.likes.count == 0
+    assert p.likes.count.zero?
   end
 end
